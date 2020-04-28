@@ -1,0 +1,7 @@
+conda env list
+conda activate yzc
+conda deactivate
+
+!python -V
+!nvidia-smi
+

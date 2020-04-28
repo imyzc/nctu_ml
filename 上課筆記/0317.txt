@@ -1,0 +1,17 @@
+https://github.com/acyang/mlmgi_2019/blob/master/useage_of_conda.ipynb
+
+
+https://github.com/acyang
+
+VASP 第一原理
+
+https://www.alcf.anl.gov/science/projects
+
+
+http://jsonviewer.stack.hu/
+
+
+# random_state 方便debug
+
+the material project
+
