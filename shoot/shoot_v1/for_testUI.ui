@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>304</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_theta">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>theta</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_v">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>4</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>v</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_v">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>10</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_theta">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>51</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_predict">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>30</y>
+     <width>101</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>predict</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_h_predict">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>164</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>h</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_r_predict">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>210</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>r</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_r_real">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>206</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>r</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_h_real">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>h</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_true_value">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>True Value</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_predict_value">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>120</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Predict Value</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

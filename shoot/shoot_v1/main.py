@@ -1,4 +1,4 @@
-#%%
+# %%
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
@@ -10,34 +10,54 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.ensemble import RandomForestRegressor
 import time
 from data_generator import *
-#%%
-# Generating data 
-velocity_init = 0
-velocity_end = 100
-theta_init = 0
-theta_end = 90
-sample_amount = 1000
-data_g(velocity_init, velocity_end, theta_init, theta_end, sample_amount)
-#%%
-# Setting training parameter
-from _tmp import parameter
-cv=5
-scoring='r2'
-train_sizes=[1e-3, 1e-2, 1e-1, 1e0]
-parameter(cv, scoring, train_sizes)
-#%%
-# Choosing ML model 
-from TrainModels import * # RFr(), SVr(), MLPr_3(), MLPr_i3(), MLPr_i7(), MLPr_i11()
-MLPr_i3()
-#%%
-# Ploting learning curves
+from TrainModels import *  # RFr(), SVr(), MLPr_3(), MLPr_i3(), MLPr_i7(), MLPr_i11()
 from ploting import *
-train_ploting()
-#%%
-# 3D ploting (including outlier data)
-v_start = 0
-v_end = 200
-theta_start = 0
-theta_end = 180
-seed_amount = 250
-data_ploting_parameter(v_start, v_end, theta_start, theta_end, seed_amount)
+
+def main():
+    # %%
+    # Generating data (a csv file with global params)
+    velocity_init = 0
+    velocity_end = 100
+    theta_init = 0
+    theta_end = 90
+    sample_amount = 10000
+    boundary_param_fitting = velocity_init, velocity_end, theta_init, theta_end, sample_amount
+
+    print("start generating data...")
+    X, y, v, theta, h, r = data_g(*boundary_param_fitting)
+    global data_fitting
+    data_fitting = X, y, v, theta, h, r
+
+    # %%
+    # Setting training parameter (global params)
+    cv = 5
+    scoring = 'r2'
+    train_sizes = [1e-3, 1e-2, 1e-1, 1e0]
+
+    # %%
+    # Choosing ML model
+    print("start setting model...")
+    h_info, r_info, models, model_paths = RFr(X, y, cv, scoring, train_sizes)
+
+    # %%
+    # Plotting learning curves
+    print("start plotting learning curves...")
+    train_plotting(h_info, r_info)
+
+    # %%
+    # 3D plotting (including outlier data)
+    v_start = 0
+    v_end = 200
+    theta_start = 0
+    theta_end = 180
+    seed_amount = 250
+    boundary_param_predict = (v_start, v_end, seed_amount), (theta_start, theta_end, seed_amount)
+
+    print("start fitting, saving...")
+    model_fitting_saving(models, model_paths, data_fitting)
+
+    print("start predicting, visualizing...")
+    data_visualization(boundary_param_predict, models, data_fitting)
+
+if __name__ == "__main__":
+    main()
