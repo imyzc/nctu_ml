@@ -11,7 +11,7 @@ from sklearn.ensemble import RandomForestRegressor
 import time
 from data_generator import *
 from TrainModels import *  # RFr(), SVr(), MLPr_3(), MLPr_i3(), MLPr_i7(), MLPr_i11()
-from ploting import *
+from plotting import *
 
 def main():
     # %%

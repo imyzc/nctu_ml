@@ -3,7 +3,7 @@ from data_generator import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-from ploting import data_visualization
+from plotting import data_visualization
 
 model_h = load("_train_model/MLPr_i3_h.joblib")
 model_r = load("_train_model/MLPr_i3_r.joblib")
