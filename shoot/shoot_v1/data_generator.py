@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 
 
 def data_g(velocity_init, velocity_end, theta_init, theta_end, sample_amount, name=None):
+    """Generate a set of data for training"""
     if name is not None:
         _name = name
     else:

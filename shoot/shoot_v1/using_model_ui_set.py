@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 from plotting import data_visualization
 import for_testUI_v3
 
+# style sheet
 widget_style = """
 #Form{
     background-color: #FFFFFF;
@@ -59,6 +60,8 @@ QLabel{
 
 
 class TestUI(QWidget):
+    """UI class"""
+
     def __init__(self):
         super().__init__()
         self.ui = for_testUI_v3.Ui_Form()
@@ -69,9 +72,12 @@ class TestUI(QWidget):
         self._button_connect()
 
     def set_stylesheet(self):
+        """Set the style sheet"""
         self.setStyleSheet(widget_style)
 
     def _button_connect(self):
+        """When ever button clicked"""
+
         def button_browse_h_model():
             v1, v2 = QFileDialog.getOpenFileName(self,
                                                  "Select one file to open",
@@ -91,6 +97,7 @@ class TestUI(QWidget):
         self.ui.toolButton_filedialog_r.clicked.connect(button_browse_r_model)
 
     def _button_predict(self):
+        """Start predicting"""
         model_h = load(self.ui.lineEdit_h_model.text())
         model_r = load(self.ui.lineEdit_r_model.text())
 
@@ -113,14 +120,21 @@ class Plotting():
         self.data_fitting = None
 
     def plot3D(self):
+        """Start plotting"""
         data_visualization(self.boundary_param_predict, self.models, self.data_fitting)
 
 
 def main():
+    # i don't know it either
     app = QApplication(sys.argv)
+
+    # get ui instance
     monitor_w = TestUI()
+
+    # ui show
     monitor_w.show()
 
+    # if gui exit, system exit
     sys.exit(app.exec_())
 
 

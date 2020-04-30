@@ -11,6 +11,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 
 def train_plotting(h_info, r_info):
+    """Plot the training curve"""
     train_sizes_h, train_score_h_mean, test_score_h_mean = h_info
     train_sizes_r, train_score_r_mean, test_score_r_mean = r_info
 
@@ -44,7 +45,7 @@ def train_plotting(h_info, r_info):
 
 
 def model_fitting_saving(models, model_paths, data_fitting):
-    """fit, save"""
+    """Model fitting and saving"""
 
     model_h, model_r = models
     model_h_path, model_r_path = model_paths
@@ -59,7 +60,7 @@ def model_fitting_saving(models, model_paths, data_fitting):
 
 
 def data_visualization(boundary_param_predict, models, data_fitting=None):
-    """predict, visualize"""
+    """Model predicting and visualizing"""
 
     v_boundary, theta_boundary = boundary_param_predict
     model_h, model_r = models

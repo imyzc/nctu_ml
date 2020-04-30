@@ -11,6 +11,7 @@ import time
 
 
 def get_model_path_name(es, fs):
+    """Get model path"""
     model_h_path = str('./_train_model/' + str(es) + '.joblib')
     model_r_path = str('./_train_model/' + str(fs) + '.joblib')
     return model_h_path, model_r_path

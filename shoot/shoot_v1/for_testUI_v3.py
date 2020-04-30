@@ -13,9 +13,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(869, 566)
+        Form.resize(860, 562)
         self.pushButton_predict = QtWidgets.QPushButton(Form)
-        self.pushButton_predict.setGeometry(QtCore.QRect(740, 500, 121, 51))
+        self.pushButton_predict.setGeometry(QtCore.QRect(730, 500, 121, 51))
         self.pushButton_predict.setObjectName("pushButton_predict")
         self.groupBox_model_choose = QtWidgets.QGroupBox(Form)
         self.groupBox_model_choose.setGeometry(QtCore.QRect(30, 30, 691, 181))

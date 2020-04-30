@@ -8,12 +8,13 @@ import PyQt5.QtCore
 import sys
 import numpy as np
 
+# local model load as variables
 model_MLPr_i3_h = load("_train_model/MLPr_i3_h.joblib")
 model_MLPr_i3_r = load("_train_model/MLPr_i3_r.joblib")
-
 model_RFr_h = load("_train_model/RFr_h.joblib")
 model_RFr_r = load("_train_model/RFr_r.joblib")
 
+# style sheet
 widget_style = """
 #Form{
     background-color: #E0E0E0;
@@ -31,6 +32,8 @@ QLabel{
 
 
 class TestUI(QWidget):
+    """UI class, combined predicting"""
+
     def __init__(self):
         super().__init__()
         self.ui = for_testUI_v2.Ui_Form()
@@ -40,11 +43,14 @@ class TestUI(QWidget):
         self._button_connect()
 
     def set_stylesheet(self):
+        """Set the style sheet"""
         self.setStyleSheet(widget_style)
 
     def _button_connect(self):
-        # predict button clicked
+        """When ever button clicked"""
+
         def predict():
+            """Start predicting"""
             try:
                 v, theta = self.ui.lineEdit_v.text(), self.ui.lineEdit_theta.text()
                 input_val = np.array((v, theta))
@@ -66,10 +72,19 @@ class TestUI(QWidget):
         self.ui.pushButton_predict.clicked.connect(predict)
 
 
-if __name__ == "__main__":
+def main():
+    # i don't know it either
     app = QApplication(sys.argv)
+
+    # get ui instance
     monitor_w = TestUI()
+
+    # ui show
     monitor_w.show()
-    # plt.hist([1,1,1,1,1,1,1,1,1,2,2,3],bins=100)
-    # plt.show()
+
+    # if gui exit, system exit
     sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()
