@@ -24,7 +24,7 @@ def main():
     boundary_param_fitting = velocity_init, velocity_end, theta_init, theta_end, sample_amount
 
     print("start generating data...")
-    X, y, v, theta, h, r = data_g(*boundary_param_fitting)
+    X, y, v, theta, h, r = data_g(*boundary_param_fitting, "RFr_0430.csv")
     global data_fitting
     data_fitting = X, y, v, theta, h, r
 

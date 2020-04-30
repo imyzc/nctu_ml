@@ -29,12 +29,18 @@ def RFr(X, y, cv, scoring, train_sizes):
     print('RFr distance cross_val:', s2 - s1, 'sec\n')
     print('RFr height test_score:', h_score, '\nRFr height test_score:', np.average(h_score), '\n')
     print('RFr distance test_score:', r_score, '\nRFr distance test_score:', np.average(r_score), '\n')
+    s1 = time.time()
     train_sizes_h, train_score_h, test_score_h = learning_curve(RFr_h, X, y[:, -2], cv=cv, scoring=scoring,
                                                                 train_sizes=train_sizes)
+    s2 = time.time()
+    print('SVr height learning curve:', s2 - s1, 'sec')
     train_score_h_mean = np.mean(train_score_h, axis=1)
     test_score_h_mean = np.mean(test_score_h, axis=1)
+    s1 = time.time()
     train_sizes_r, train_score_r, test_score_r = learning_curve(RFr_r, X, y[:, -1], cv=cv, scoring=scoring,
                                                                 train_sizes=train_sizes)
+    s2 = time.time()
+    print('SVr distance learning curve:', s2 - s1, 'sec')
     train_score_r_mean = np.mean(train_score_r, axis=1)
     test_score_r_mean = np.mean(test_score_r, axis=1)
 
@@ -60,12 +66,19 @@ def SVr(X, y, cv, scoring, train_sizes):
     print('SVr distance cross_val:', s2 - s1, 'sec\n')
     print('SVr height test_score:', h_score, '\nSVr height test_score:', np.average(h_score), '\n')
     print('SVr distance test_score:', r_score, '\nSVr distance test_score:', np.average(r_score), '\n')
+
+    s1 = time.time()
     train_sizes_h, train_score_h, test_score_h = learning_curve(SVr_h, X, y[:, -2], cv=cv, scoring=scoring,
                                                                 train_sizes=train_sizes)
+    s2 = time.time()
+    print('SVr height learning curve:', s2 - s1, 'sec')
     train_score_h_mean = np.mean(train_score_h, axis=1)
     test_score_h_mean = np.mean(test_score_h, axis=1)
+    s1 = time.time()
     train_sizes_r, train_score_r, test_score_r = learning_curve(SVr_r, X, y[:, -1], cv=cv, scoring=scoring,
                                                                 train_sizes=train_sizes)
+    s2 = time.time()
+    print('SVr distance learning curve:', s2 - s1, 'sec')
     train_score_r_mean = np.mean(train_score_r, axis=1)
     test_score_r_mean = np.mean(test_score_r, axis=1)
 

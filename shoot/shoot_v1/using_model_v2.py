@@ -9,8 +9,11 @@ import PyQt5.QtCore
 import sys
 import numpy as np
 
-model_h = load("_train_model/MLPr_i3_h.joblib")
-model_r = load("_train_model/MLPr_i3_r.joblib")
+model_MLPr_i3_h = load("_train_model/MLPr_i3_h.joblib")
+model_MLPr_i3_r = load("_train_model/MLPr_i3_r.joblib")
+
+model_RFr_h = load("_train_model/RFr_h.joblib")
+model_RFr_r = load("_train_model/RFr_r.joblib")
 
 widget_style = """
 #Form{
@@ -48,8 +51,8 @@ class TestUI(QWidget):
                 input_val = np.array((v, theta))
                 input_val = input_val.reshape(1, 2)
                 print(input_val.shape)
-                h_pre = model_h.predict(input_val)[0]
-                r_pre = model_r.predict(input_val)[0]
+                h_pre = model_RFr_h.predict(input_val)[0]
+                r_pre = model_RFr_r.predict(input_val)[0]
 
                 h_real = (float(v) * np.sin(float(theta) * (np.pi / 180))) ** 2 / 19.6
                 r_real = (float(v) ** 2) * np.sin(2 * float(theta) * (np.pi / 180)) / 9.8

@@ -80,22 +80,24 @@ def data_visualization(boundary_param_predict, models, data_fitting=None):
     ax = fig.gca(projection='3d')  # get current axes
     if data_fitting is not None:
         ax.scatter(v[:500], theta[:500], h[:500], c=h[:500], cmap=cm.coolwarm)
-    ax.scatter(v_p, theta_p, model_h.predict(vp_tp), c='r', marker='x')
-    ax.scatter(v_p, theta_p, hp, c='g', marker='^')
+    ax.scatter(v_p, theta_p, model_h.predict(vp_tp), c='r', marker='x', label='prediction')
+    ax.scatter(v_p, theta_p, hp, c='g', marker='^', label='true')
     ax.text2D(0.05, 0.95, 'height', transform=ax.transAxes)
     ax.set_xlabel('velocity')
     ax.set_ylabel('theta')
     ax.set_zlabel('height')
+    ax.legend()
     plt.show()
 
     fig = plt.figure(figsize=(6, 6))
     ax = fig.gca(projection='3d')
     if data_fitting is not None:
         ax.scatter(v[:500], theta[:500], r[:500], c=r[:500], cmap=cm.coolwarm)
-    ax.scatter(v_p, theta_p, model_r.predict(vp_tp), c='r', marker='x')
-    ax.scatter(v_p, theta_p, rp, c='g', marker='^')
+    ax.scatter(v_p, theta_p, model_r.predict(vp_tp), c='r', marker='x',label='prediction')
+    ax.scatter(v_p, theta_p, rp, c='g', marker='^',label='true')
     ax.text2D(0.05, 0.95, 'Distance', transform=ax.transAxes)
     ax.set_xlabel('velocity')
     ax.set_ylabel('theta')
     ax.set_zlabel('distance')
+    ax.legend()
     plt.show()
