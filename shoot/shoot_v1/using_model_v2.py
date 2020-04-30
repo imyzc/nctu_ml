@@ -1,5 +1,5 @@
 from joblib import load
-import for_testUI
+import for_testUI_v2
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QGridLayout, QLabel, QWidget
 from PyQt5 import QtWidgets
@@ -33,7 +33,7 @@ QLabel{
 class TestUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.ui = for_testUI.Ui_Form()
+        self.ui = for_testUI_v2.Ui_Form()
         self.ui.setupUi(self)
 
         self.set_stylesheet()
