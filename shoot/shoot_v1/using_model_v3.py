@@ -116,10 +116,13 @@ class Plotting():
         data_visualization(self.boundary_param_predict, self.models, self.data_fitting)
 
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     monitor_w = TestUI()
     monitor_w.show()
-    # plt.hist([1,1,1,1,1,1,1,1,1,2,2,3],bins=100)
-    # plt.show()
+
     sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()
