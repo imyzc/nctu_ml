@@ -63,6 +63,7 @@ def data_visualization(boundary_param_predict, models, data_fitting=None):
 
     v_boundary, theta_boundary = boundary_param_predict
     model_h, model_r = models
+
     if data_fitting is not None:
         X, y, v, theta, h, r = data_fitting
     else:
@@ -93,8 +94,8 @@ def data_visualization(boundary_param_predict, models, data_fitting=None):
     ax = fig.gca(projection='3d')
     if data_fitting is not None:
         ax.scatter(v[:500], theta[:500], r[:500], c=r[:500], cmap=cm.coolwarm)
-    ax.scatter(v_p, theta_p, model_r.predict(vp_tp), c='r', marker='x',label='prediction')
-    ax.scatter(v_p, theta_p, rp, c='g', marker='^',label='true')
+    ax.scatter(v_p, theta_p, model_r.predict(vp_tp), c='r', marker='x', label='prediction')
+    ax.scatter(v_p, theta_p, rp, c='g', marker='^', label='true')
     ax.text2D(0.05, 0.95, 'Distance', transform=ax.transAxes)
     ax.set_xlabel('velocity')
     ax.set_ylabel('theta')

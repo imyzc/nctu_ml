@@ -1,7 +1,4 @@
 from joblib import load
-from data_generator import *
-import matplotlib.pyplot as plt
-import numpy as np
 
 from plotting import data_visualization
 
@@ -10,6 +7,7 @@ model_MLPr_i3_r = load("_train_model/MLPr_i3_r.joblib")
 
 model_RFr_h = load("_train_model/RFr_h.joblib")
 model_RFr_r = load("_train_model/RFr_r.joblib")
+
 
 def generate_data():
     velocity_init = 0

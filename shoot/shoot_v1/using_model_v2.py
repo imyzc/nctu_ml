@@ -1,5 +1,4 @@
 from joblib import load
-from data_generator import *
 import for_testUI
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QGridLayout, QLabel, QWidget
