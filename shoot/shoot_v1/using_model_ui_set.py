@@ -1,7 +1,11 @@
-from joblib import load
-import matplotlib.pyplot as plt
-import numpy as np
 import sys
+import os
+
+# for packing
+if hasattr(sys, 'frozen'):
+    os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
+
+from joblib import load
 
 from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 

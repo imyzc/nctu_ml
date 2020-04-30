@@ -3,11 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D  # projection='3d'
 from joblib import dump, load
-from sklearn.svm import SVR
-from sklearn.manifold import Isomap
-from sklearn.pipeline import Pipeline
-from sklearn.neural_network import MLPRegressor
-from sklearn.ensemble import RandomForestRegressor
 
 
 def train_plotting(h_info, r_info):
