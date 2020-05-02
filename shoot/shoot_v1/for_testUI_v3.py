@@ -77,6 +77,9 @@ class Ui_Form(object):
         self.label_sample_n = QtWidgets.QLabel(self.groupBox_data_generate)
         self.label_sample_n.setGeometry(QtCore.QRect(160, 280, 121, 31))
         self.label_sample_n.setObjectName("label_sample_n")
+        self.label_version = QtWidgets.QLabel(Form)
+        self.label_version.setGeometry(QtCore.QRect(730, 40, 121, 81))
+        self.label_version.setObjectName("label_version")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -96,3 +99,4 @@ class Ui_Form(object):
         self.label_t_e.setText(_translate("Form", "Theta End"))
         self.label_v_s.setText(_translate("Form", "V Start"))
         self.label_sample_n.setText(_translate("Form", "# Sample"))
+        self.label_version.setText(_translate("Form", "version"))

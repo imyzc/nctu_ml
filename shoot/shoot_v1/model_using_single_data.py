@@ -8,6 +8,9 @@ import PyQt5.QtCore
 import sys
 import numpy as np
 
+# version
+_version_single = "v_1"
+
 # local model load as variables
 model_MLPr_i3_h = load("_train_model/MLPr_i3_h.joblib")
 model_MLPr_i3_r = load("_train_model/MLPr_i3_r.joblib")
@@ -17,15 +20,37 @@ model_RFr_r = load("_train_model/RFr_r.joblib")
 # style sheet
 widget_style = """
 #Form{
-    background-color: #E0E0E0;
+    background-color: #FFFFFF;
 }
 
 QLabel{
     font: 12pt "Calibri";
 }
+
+#groupBox_data_generate, #groupBox_prediction{
+    font: 14pt "Calibri";
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#groupBox_data_generate:title, #groupBox_prediction:title {
+    border: 0px solid black;
+    border-radius: 10px;
+    background-color: #B3D9D9;
+}
+
 #pushButton_predict{
     font: 12pt "Calibri";
     background-color: #BEBEBE;
+    border: 0px solid black;
+    border-radius: 10px;
+}
+
+#lineEdit_v, #lineEdit_theta{
+    font: 12pt "Calibri";
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 """
@@ -40,11 +65,20 @@ class TestUI(QWidget):
         self.ui.setupUi(self)
 
         self.set_stylesheet()
+        self._object_init()
         self._button_connect()
 
     def set_stylesheet(self):
         """Set the style sheet"""
         self.setStyleSheet(widget_style)
+
+    def _object_init(self):
+        self.ui.label_version.setText(f"version: {_version_single}")
+        self.setWindowTitle("Single Data Prediction")
+        self.ui.label_h_predict.setText("")
+        self.ui.label_r_predict.setText("")
+        self.ui.label_h_real.setText("")
+        self.ui.label_r_real.setText("")
 
     def _button_connect(self):
         """When ever button clicked"""

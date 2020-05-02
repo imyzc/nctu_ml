@@ -12,6 +12,9 @@ from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 from plotting import data_visualization
 import for_testUI_v3
 
+# version
+_version_set = "v_1"
+
 # style sheet
 widget_style = """
 #Form{
@@ -73,11 +76,16 @@ class TestUI(QWidget):
 
         self.plotting = Plotting()
         self.set_stylesheet()
+        self._object_init()
         self._button_connect()
 
     def set_stylesheet(self):
         """Set the style sheet"""
         self.setStyleSheet(widget_style)
+
+    def _object_init(self):
+        self.ui.label_version.setText(f"version: {_version_set}")
+        self.setWindowTitle("Data Set Prediction")
 
     def _button_connect(self):
         """When ever button clicked"""

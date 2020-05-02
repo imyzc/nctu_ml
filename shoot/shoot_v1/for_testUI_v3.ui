@@ -245,6 +245,19 @@
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_version">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>40</y>
+     <width>121</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>version</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
